@@ -19,8 +19,15 @@
                 <div class="card-body">
                     <!-- History data table will be dynamically added here -->
                     <div id="history-data"></div>
-                    <!-- Line chart for history data -->
-                    <canvas id="historyChart" width="400" height="200"></canvas>
+                    <!-- Line charts for history data -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <canvas id="volumeAirChart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="col-md-6">
+                            <canvas id="volumeUrinChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="text-center mt-3">
@@ -56,7 +63,8 @@
         console.log('Received data:', data); // Log the received data
 
         const historyTableBody = document.getElementById('history-data');
-        const ctx = document.getElementById('historyChart').getContext('2d');
+        const volumeAirCtx = document.getElementById('volumeAirChart').getContext('2d');
+        const volumeUrinCtx = document.getElementById('volumeUrinChart').getContext('2d');
         historyTableBody.innerHTML = ''; // Clear existing data
 
         let labels = [];
@@ -104,8 +112,8 @@
                 historyTableBody.innerHTML += tableContent;
             }
 
-            // Create the chart
-            new Chart(ctx, {
+            // Create the Volume Air chart
+            new Chart(volumeAirCtx, {
                 type: 'line',
                 data: {
                     labels: labels,
@@ -116,7 +124,34 @@
                             borderColor: 'rgba(75, 192, 192, 1)',
                             borderWidth: 1,
                             fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
                         },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Volume'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create the Volume Urin chart
+            new Chart(volumeUrinCtx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
                         {
                             label: 'Volume Urin',
                             data: beratUrinData,
