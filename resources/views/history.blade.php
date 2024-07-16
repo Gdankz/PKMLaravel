@@ -55,7 +55,7 @@
     // Get a reference to the database service
     const db = firebase.database();
     const no_rm = '{{ Auth::user()->noRekamMedis }}';
-    const historyDataRef = db.ref('Riwayat/' + no_rm); // Replace with your database reference
+    const historyDataRef = db.ref('Riwayat/' + no_rm); // Replace with database reference
 
     // Listen for changes in the database
     historyDataRef.on('value', (snapshot) => {
