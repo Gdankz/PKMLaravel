@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    protected $firebaseBaseUrl = 'https://dummytes-sipair-default-rtdb.asia-southeast1.firebasedatabase.app';
+    protected $firebaseBaseUrl = 'https://sipair-pkm2024-default-rtdb.firebaseio.com';
 
     public function showLoginForm()
     {

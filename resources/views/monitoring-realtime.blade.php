@@ -43,13 +43,13 @@
 <script>
     // Initialize Firebase
     const firebaseConfig = {
-        apiKey: "AIzaSyCyMqMTTTMbkzamN2_4HDCpJRR2SFrZA_0",
-        authDomain: "dummytes-sipair.firebaseapp.com",
-        databaseURL: "https://dummytes-sipair-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "dummytes-sipair",
-        storageBucket: "dummytes-sipair.appspot.com",
-        messagingSenderId: "424489212182",
-        appId: "1:424489212182:web:9db5ec4785086d6d6f1837"
+        apiKey: "AIzaSyButORfCnXSdc2YVxcmuW6j_LUZMFY6oRU",
+        authDomain: "sipair-pkm2024.firebaseapp.com",
+        databaseURL: "https://sipair-pkm2024-default-rtdb.firebaseio.com",
+        projectId: "sipair-pkm2024",
+        storageBucket: "sipair-pkm2024.appspot.com",
+        messagingSenderId: "732555989903",
+        appId: "1:732555989903:web:efd2c5dd3b5328fc0171fa"
     };
     firebase.initializeApp(firebaseConfig);
 
